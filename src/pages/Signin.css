@@ -1,0 +1,136 @@
+/** @format */
+
+/* Reuse the same style as Login for consistency */
+.auth-page {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(135deg, #eef2ff 0%, #f9f7ff 100%);
+	padding: 2rem;
+}
+
+.auth-card {
+	width: min(100%, 940px);
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	background: #fff;
+	border-radius: 20px;
+	box-shadow: 0 24px 50px rgba(43, 52, 88, 0.2);
+	overflow: hidden;
+}
+
+.auth-left {
+	background: linear-gradient(135deg, #7b65ff 0%, #bb9cff 100%);
+	color: #fff;
+	padding: 3rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 1rem;
+}
+
+.auth-left h1 {
+	font-size: 2rem;
+	margin: 0;
+}
+
+.auth-left p {
+	margin: 0;
+	color: #e8e4ff;
+	font-size: 1.05rem;
+}
+
+.auth-left ul {
+	margin: 0;
+	padding-left: 1.2rem;
+	list-style: disc;
+}
+
+.auth-left li {
+	color: #eef0ff;
+	line-height: 1.5;
+}
+
+.auth-right {
+	padding: 3rem;
+	background: #fff;
+}
+
+.auth-right h2 {
+	margin-top: 0;
+	font-size: 1.8rem;
+	color: #1a2138;
+}
+
+.auth-form {
+	display: grid;
+	gap: 1rem;
+	margin-top: 1rem;
+}
+
+.auth-form label {
+	display: flex;
+	flex-direction: column;
+	font-size: 0.85rem;
+	color: #5d6487;
+	gap: 0.4rem;
+}
+
+.auth-form input {
+	border: 1px solid #dce1f2;
+	border-radius: 10px;
+	padding: 0.8rem 0.9rem;
+	font-size: 1rem;
+	color: #1f294b;
+	background: #fcfcff;
+}
+
+/* Red border for invalid input */
+.input-error {
+	border: 1.5px solid #ff4d4f !important;
+	background: #fff6f6;
+}
+
+.btn-primary {
+	background: linear-gradient(90deg, #7056ff 0%, #8f7aff 100%);
+	color: white;
+	border: none;
+	border-radius: 10px;
+	padding: 0.9rem;
+	font-size: 1rem;
+	font-weight: 700;
+	cursor: pointer;
+	box-shadow: 0 8px 18px rgba(102, 70, 255, 0.25);
+}
+
+.auth-switch {
+	margin-top: 1rem;
+	font-size: 0.9rem;
+	color: #939dbb;
+}
+
+.auth-switch a {
+	color: #7159ff;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+@media (max-width: 900px) {
+	.auth-card {
+		grid-template-columns: 1fr;
+	}
+	.auth-left {
+		padding: 2rem;
+	}
+	.auth-right {
+		padding: 2rem;
+	}
+}
+.error-message {
+	color: #ff4d4f;
+	font-size: 0.85rem;
+	margin-top: -0.5rem;
+	margin-bottom: 0.5rem;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
