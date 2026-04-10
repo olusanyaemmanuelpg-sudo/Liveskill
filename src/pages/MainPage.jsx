@@ -66,7 +66,10 @@ export function MainPage() {
 					</div>
 				</div>
 				<div className='sidebar-cta'>
-					<button>
+					<button
+						onClick={() => {
+							navigate('/liveskill-streaminfo');
+						}}>
 						🎥 <span>Start streaming</span>
 					</button>
 				</div>
@@ -95,8 +98,9 @@ export function MainPage() {
 							</video>
 							<div className='stream-info'>
 								<h3>Live Stream Title</h3>
-								<p>
-									Streamer: <span>@WebDeji</span> | Viewers:
+								<p className='stream-meta'>
+									Streamer: <span>@WebDeji</span> | Category:
+									<span>General'</span> | Viewers:
 									<span className='viewer'> 1.2K</span>
 								</p>
 							</div>

@@ -29,45 +29,51 @@ export async function refreshToken() {
 export async function makeAuthenticatedRequest(url, navigate, options = {}) {
 	let token = getAccessToken();
 
-	let res = await fetch(url, {
-		...options,
-		headers: {
-			...options.headers,
-			Authorization: `Bearer ${token}`,
-		},
-		credentials: 'include',
-	});
+	try {
+		let res = await fetch(url, {
+			...options,
+			headers: {
+				...options.headers,
+				Authorization: `Bearer ${token}`,
+			},
+			credentials: 'include',
+		});
 
-	console.log('Response status:', res.status);
+		console.log('Response status:', res.status);
 
-	if (res.status === 401) {
-		console.log('Access token expired, attempting to refresh...');
-		const refreshed = await refreshToken();
+		if (res.status === 401) {
+			console.log('Access token expired, attempting to refresh...');
+			const refreshed = await refreshToken();
 
-		if (!refreshed) {
-			console.log('Token refresh failed, redirecting to login');
-			navigate('/login');
-			return null;
+			if (!refreshed) {
+				console.log('Token refresh failed, redirecting to login');
+				navigate('/login');
+				return null;
+			}
+
+			// Retry the original request with the new token
+			res = await fetch(url, {
+				...options,
+				headers: {
+					...options.headers,
+					Authorization: `Bearer ${getAccessToken()}`,
+				},
+				credentials: 'include',
+			});
 		}
+
+		if (!res.ok) {
+			// Optionally handle other errors here
+			console.error(`Request to ${url} failed with status ${res.status}`);
+			throw new Error(`Request failed with status ${res.status}`);
+		}
+
+		return res;
+	} catch (err) {
+		console.error('Network or auth error:', err);
+		navigate('/login');
+		throw err;
 	}
-
-	// Retry the original request with the new token
-	res = await fetch(url, {
-		...options,
-		headers: {
-			...options.headers,
-			Authorization: `Bearer ${getAccessToken()}`,
-		},
-		credentials: 'include',
-	});
-
-	if (!res.ok) {
-		// Optionally handle other errors here
-		console.error(`Request to ${url} failed with status ${res.status}`);
-		throw new Error(`Request failed with status ${res.status}`);
-	}
-
-	return res;
 }
 
 export async function logout(navigate) {
