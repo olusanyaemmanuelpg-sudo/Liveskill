@@ -11,6 +11,8 @@ import { useEffect, useState, useRef } from 'react';
 
 import { makeAuthenticatedRequest } from '../../authentication/request';
 
+import { ChatRoom } from '../components/Chatroom';
+
 import './MainPage.css';
 import './StreamRoom.css';
 
@@ -50,13 +52,18 @@ export function StreamRoom() {
 		console.log('StreamRoom initialized with token:', token);
 
 		let mounted = true;
+		// Capture a ref to the room created in THIS effect invocation
+		let localRoom = null;
 
 		const startStreaming = async () => {
 			try {
 				const room = new Room();
+				localRoom = room;
 				roomRef.current = room;
 
 				await room.connect(VITE_LIVEKIT_URL, token);
+
+				// If unmounted while connecting — bail out cleanly
 				if (!mounted) {
 					room.disconnect();
 					return;
@@ -67,7 +74,7 @@ export function StreamRoom() {
 				setCameras(devices);
 				if (!mounted) return;
 
-				// 2. Select default camera (Fallback safely if HP HD Camera is missing)
+				// 2. Select default camera
 				const defaultCam =
 					devices.find((device) =>
 						device.label.includes('HP HD Camera (04f2:b51d)'),
@@ -102,20 +109,25 @@ export function StreamRoom() {
 					videoRef.current.appendChild(element);
 				}
 			} catch (err) {
+				// Suppress the expected StrictMode double-mount abort — it's not a real error
+				if (err?.message?.includes('Client initiated disconnect')) return;
 				console.error('Error connecting to LiveKit:', err);
 			}
 		};
 
 		startStreaming();
 
-		// Cleanup function when component unmounts
+		// Cleanup: mark unmounted, stop tracks, disconnect this invocation's room
 		return () => {
 			mounted = false;
 			if (videoTrackRef.current) {
 				videoTrackRef.current.stop();
+				videoTrackRef.current = null;
 			}
-			if (roomRef.current) {
-				roomRef.current.disconnect();
+			// Only disconnect localRoom, not roomRef (which may already be a new mount's room)
+			if (localRoom) {
+				localRoom.disconnect();
+				localRoom = null;
 			}
 			if (videoRef.current) {
 				videoRef.current.innerHTML = '';
@@ -386,34 +398,10 @@ export function StreamRoom() {
 				</div>
 
 				{/* 2. Right side: Chat application */}
-				<div className='chat-area'>
-					<div className='chat-header'>
-						<h4>Stream Chat</h4>
-						<i className='fa-solid fa-users'></i>
-					</div>
-
-					<div className='chat-messages'>
-						<div className='message system'>Welcome to the chat room!</div>
-						<div className='message system'>
-							Be respectful and kind to others.
-						</div>
-						<div className='message'>
-							<span className='chat-user'>AvidFan99:</span> Can't wait for this
-							stream to start!!
-						</div>
-						<div className='message'>
-							<span className='chat-user host'>WebDeji:</span> Hello everyone,
-							warming up the camera now.
-						</div>
-					</div>
-
-					<div className='chat-input-container'>
-						<input type='text' placeholder='Send a message...' />
-						<button>
-							<i className='fa-solid fa-paper-plane'></i>
-						</button>
-					</div>
-				</div>
+				<ChatRoom
+					roomName={formData?.title || 'default-room'}
+					user={formData?.username}
+				/>
 			</section>
 		</div>
 	);

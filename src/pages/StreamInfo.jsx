@@ -16,6 +16,7 @@ export function StreamInfo() {
 		description: '',
 		category: 'Gaming',
 		tags: '',
+		username: 'WebDeji', // TODO: pull from Auth context
 	});
 
 	const VITE_BACKEND_URL =
@@ -42,14 +43,15 @@ export function StreamInfo() {
 
 			console.log('Stream Info Token Received:', response.token);
 
-			// Pass the token and formData via state
+			// Navigate to stream room with token and form data
 			navigate('/liveskill-streamroom', {
-				state: { token: response.token, formData: formData },
+				state: { token: response.token, formData },
 			});
-			alert('Token successfully generated! Ready to stream.');
 		} catch (error) {
 			console.error('Failed to setup stream:', error);
-			alert('Could not generate stream token. Check console for errors.');
+			alert(
+				'Could not generate stream token. Please check console for errors.',
+			);
 		} finally {
 			setIsLoading(false);
 		}

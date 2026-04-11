@@ -40,13 +40,13 @@ export function MainPage() {
 				</div>
 				<div className='sidebar-btns'>
 					<div>
-						<i class='fa-solid fa-house'></i> <p>Home</p>
+						<i className='fa-solid fa-house'></i> <p>Home</p>
 					</div>
 					<div>
-						<i class='fa-solid fa-circle'></i> <p>Live</p>
+						<i className='fa-solid fa-circle'></i> <p>Live</p>
 					</div>
 					<div>
-						<i class='fa-solid fa-folder-open'></i>
+						<i className='fa-solid fa-folder-open'></i>
 						<p>Categories</p>
 					</div>
 					<div></div>
@@ -54,7 +54,7 @@ export function MainPage() {
 				</div>
 				<div className='user-btns'>
 					<div>
-						<i class='fa-solid fa-user'></i>
+						<i className='fa-solid fa-user'></i>
 						<p>Following</p>
 					</div>
 					<div>
@@ -77,7 +77,7 @@ export function MainPage() {
 			<section className='main-section'>
 				<div className='input-section'>
 					<div className='input-body'>
-						<i class='fa-solid fa-microphone'></i>
+						<i className='fa-solid fa-microphone'></i>
 						<input type='text' placeholder='Explore' />
 					</div>
 					<div className='logout'>
@@ -85,7 +85,7 @@ export function MainPage() {
 							onClick={() => {
 								logout(navigate);
 							}}>
-							<i class='fa-solid fa-right-from-bracket'></i>Logout
+							<i className='fa-solid fa-right-from-bracket'></i>Logout
 						</button>
 					</div>
 				</div>
@@ -109,7 +109,7 @@ export function MainPage() {
 					<section className='chatbar-sec'>
 						<div className='chat-header'>
 							<h4>
-								<i class='fa-solid fa-circle fa-fade'></i>Live Chat
+								<i className='fa-solid fa-circle fa-fade'></i>Live Chat
 							</h4>
 						</div>
 						<div className='chat-messages'>
