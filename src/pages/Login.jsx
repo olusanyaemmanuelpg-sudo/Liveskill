@@ -134,11 +134,19 @@ export function Login() {
 
 					<div className='auth-social'>
 						<span>Or log in with</span>
-						<button className='social-btn google'>
+						<button
+							className='social-btn google'
+							onClick={() => {
+								alert('Under construction');
+							}}>
 							<img src='images/google.png' alt='Google logo' /> Log in with
 							Google
 						</button>
-						<button className='social-btn twitter'>
+						<button
+							className='social-btn twitter'
+							onClick={() => {
+								alert('Under construction');
+							}}>
 							<img src='images/twitter.png' alt='X logo' />
 							Log in with Twitter
 						</button>
