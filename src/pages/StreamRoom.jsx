@@ -2,7 +2,6 @@
 
 import {
 	Room,
-	TrackPublication,
 	createLocalVideoTrack,
 	createLocalScreenTracks,
 } from 'livekit-client';
@@ -236,7 +235,18 @@ export function StreamRoom() {
 	};
 
 	// end streams
-	const handleEndStream = () => {
+	const handleEndStream = async () => {
+		// Remove stream from the public listing
+		if (formData?.title) {
+			try {
+				await fetch(
+					`${VITE_BACKEND_URL}/live-streams/${encodeURIComponent(formData.title)}`,
+					{ method: 'DELETE', credentials: 'include' },
+				);
+			} catch {
+				// Non-critical — proceed with cleanup even if request fails
+			}
+		}
 		if (videoTrackRef.current) {
 			videoTrackRef.current.stop();
 		}

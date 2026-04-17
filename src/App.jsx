@@ -7,6 +7,7 @@ import { Signin } from './pages/Signin';
 import { MainPage } from './pages/MainPage';
 import { StreamInfo } from './pages/StreamInfo';
 import { StreamRoom } from './pages/StreamRoom';
+import { ViewerRoom } from './pages/ViewerRoom';
 import './App.css';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
 			<Route path='liveskill' element={<MainPage />} />
 			<Route path='liveskill-streaminfo' element={<StreamInfo />} />
 			<Route path='liveskill-streamroom' element={<StreamRoom />} />
+			<Route path='liveskill-viewroom' element={<ViewerRoom />} />
 		</Routes>
 	);
 }

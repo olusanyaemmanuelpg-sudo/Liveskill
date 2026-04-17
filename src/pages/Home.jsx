@@ -4,11 +4,13 @@ import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { Testimonials } from '../components/Testimonials';
 import { useLocation } from 'react-router';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import myvideo from '../assets/animation/Web_app_live_202603231920 (1).mp4';
+import emailToUpdate from '../../authentication/emailUpdate';
 import './Home.css';
 
 export function HomePage() {
+	const [email, setEmail] = useState('');
 	const location = useLocation();
 	useEffect(() => {
 		if (location.hash) {
@@ -193,7 +195,7 @@ export function HomePage() {
 				</div>
 			</section>
 			<hr className='hr' />
-			<Footer />
+			<Footer setEmail={setEmail} email={email} emailToUpdate={emailToUpdate} />
 		</div>
 	);
 }

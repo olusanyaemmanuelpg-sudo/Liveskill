@@ -39,6 +39,7 @@ export function StreamInfo() {
 				userId: 'webdeji', // TODO: Replace with dynamic user ID from Auth context
 				roomName: formData.title, // Note: Consider slugifying for cleaner room IDs
 				role: 'host',
+				title: formData.title,
 			});
 
 			console.log('Stream Info Token Received:', response.token);

@@ -1,6 +1,6 @@
 /** @format */
 
-import { getAccessToken, setAccessToken, clearAccessToken } from './auth';
+import { getAccessToken, setAccessToken } from './auth';
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000';
 
@@ -73,20 +73,5 @@ export async function makeAuthenticatedRequest(url, navigate, options = {}) {
 		console.error('Network or auth error:', err);
 		navigate('/login');
 		throw err;
-	}
-}
-
-export async function logout(navigate) {
-	try {
-		const res = await fetch(`${BACKEND_URL}/logout`, {
-			method: 'GET',
-			credentials: 'include',
-		});
-		if (res.ok) {
-			clearAccessToken();
-			navigate('/login');
-		}
-	} catch (err) {
-		console.error('logout', err);
 	}
 }
