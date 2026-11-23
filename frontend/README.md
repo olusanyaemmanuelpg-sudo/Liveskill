@@ -95,33 +95,27 @@ sequenceDiagram
 
 ## Installation
 
-1. Clone the repository:
+From the repository root, install the frontend dependencies:
 
 ```bash
-git clone https://github.com/olusanyaemmanuelem-pg-sudo/Liveskill.git
-cd Liveskill
-```
-
-2. Install dependencies:
-
-```bash
+cd frontend
 npm install
 ```
 
-3. Create a `.env` file in the root of the project:
+Create `frontend/.env`:
 
 ```env
 VITE_BACKEND_URL=http://localhost:3000
 VITE_LIVEKIT_URL=wss://your-livekit-server.com
 ```
 
-4. Start the development server:
+Start the development server from `frontend/`:
 
 ```bash
 npm run dev
 ```
 
-The app will be available at `http://localhost:5173`.
+Vite prints the app URL in the terminal (normally `http://localhost:5173`). See the [root README](../README.md) for backend setup and the complete local development steps.
 
 ## Usage
 

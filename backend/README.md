@@ -67,37 +67,31 @@ sequenceDiagram
 
 ## Installation
 
-1. Clone the repository:
+From the repository root, install the backend dependencies:
 
 ```bash
-git clone https://github.com/olusanyaemmanuelpg-sudo/Liveskill.git
-cd Liveskill
-```
-
-2. Install dependencies:
-
-```bash
+cd backend
 npm install
 ```
 
-3. Create a `.env` file in the root of the project and add your environment variables:
+Create `backend/.env`:
 
-```bash
+```env
 PORT=3000
-MONGODB_URI=your_mongodb_connection_string
-ACCESS_TOKEN_SECRET=your_access_token_secret
-REFRESH_TOKEN_SECRET=your_refresh_token_secret
-LIVEKIT_API_KEY=your_livekit_api_key
-LIVEKIT_API_SECRET=your_livekit_api_secret
+DATABASE_URL=<your MongoDB connection string>
+ACCESS_TOKEN_SECRET=<a long random secret>
+REFRESH_TOKEN_SECRET=<a different long random secret>
+LIVEKIT_API_KEY=<your LiveKit API key>
+LIVEKIT_API_SECRET=<your LiveKit API secret>
 ```
 
-4. Start the development server:
+Start the backend from `backend/`:
 
 ```bash
 npm run dev
 ```
 
-The server will run on `http://localhost:3000` by default.
+The API listens on port `3000` by default. See the [root README](../README.md) for frontend setup and the complete local development steps.
 
 ## Usage
 
