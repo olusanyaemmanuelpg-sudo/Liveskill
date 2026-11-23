@@ -1,0 +1,76 @@
+/** @format */
+
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 8px 12px 8px 24px;
+	background: white;
+	border: 1px solid #e5e7eb; /* Soft light grey border */
+	border-radius: 20px; /* The "Pill" shape */
+	width: fit-content;
+	margin: 20px auto; /* Centers the navbar on the page */
+	font-family: 'Poppins', sans-serif;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+	backdrop-filter: 10px;
+	-webkit-backdrop-filter: 10px;
+}
+nav {
+	display: flex;
+	gap: 20px;
+	align-items: center;
+}
+nav .logo {
+	font-size: 18px;
+	margin-right: 32px;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+nav .links {
+	display: flex;
+	gap: 28px;
+	list-style: none;
+}
+nav .links li {
+	color: #6b7280; /* Professional mid-grey */
+	font-size: 14px;
+	font-weight: 500;
+	cursor: pointer;
+	transition: color 0.2s;
+}
+nav .links li:hover {
+	color: #111827; /* Darker on hover */
+}
+nav .links li a {
+	text-decoration: none;
+	color: #6b7280;
+}
+.nav-action {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	margin-left: 32px;
+}
+
+.login-link {
+	font-size: 14px;
+	color: #6b7280;
+	cursor: pointer;
+}
+
+.sign-btn {
+	background: #111; /* Near black */
+	color: white;
+	padding: 8px 20px;
+	border-radius: 10px;
+	border: none;
+	font-size: 14px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: opacity 0.2s;
+}
+
+.sign-btn:hover {
+	background-color: #333;
+}

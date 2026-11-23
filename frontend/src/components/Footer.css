@@ -1,0 +1,63 @@
+/** @format */
+
+footer {
+	background-color: #f8f9fa;
+	padding-bottom: 50px;
+	padding: 20px;
+}
+footer h2 {
+	font-family: 'Inter', sans-serif;
+	font-weight: 600;
+	font-size: 24px;
+	color: #333;
+}
+.footer-con {
+	display: flex;
+	justify-content: space-between;
+}
+.footer-left {
+	display: flex;
+	align-items: flex-end;
+	gap: 30px;
+}
+.footer-left p {
+	color: #333;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 500;
+}
+.footer-right h3 {
+	color: #333;
+	font-family: 'Poppins', sans-serif;
+	margin-bottom: 10px;
+}
+.footer-right-div {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.footer-right-div input {
+	padding: 9px 20px;
+	color: #333;
+	border: 1px solid #333;
+	border-radius: 10px;
+	font-family: 'Poppins', sans-serif;
+}
+.footer-right-div button {
+	padding: 9px 13px;
+	background-color: #111;
+	font-size: 15px;
+	color: white;
+	border-radius: 10px;
+	border: none;
+	font-family: 'Poppins', sans-serif;
+}
+.footer-right-div button:hover {
+	background-color: #333;
+}
+
+.notification {
+	margin-top: 10px;
+	font-size: 14px;
+	font-weight: 500;
+	font-family: 'Poppins', sans-serif;
+}
