@@ -2,6 +2,7 @@
 
 import { useEffect, useId, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
+import { requestOtp } from '../../authentication/otpAuth';
 import './HeroStudio.css';
 
 const STUDIO_SCENES = [
@@ -9,10 +10,14 @@ const STUDIO_SCENES = [
 	'https://res.cloudinary.com/dovuy2zci/image/upload/v1774647171/handsome-man-smiling-happy-face-portrait-close-up_53876-139608_wdtxpb.jpg',
 ];
 
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 export function HeroStudio() {
 	const [email, setEmail] = useState('');
 	const [agreed, setAgreed] = useState(false);
 	const [sceneIndex, setSceneIndex] = useState(0);
+	const [isSending, setIsSending] = useState(false);
+	const [heroError, setHeroError] = useState('');
 	const navigate = useNavigate();
 	const idPrefix = useId();
 
@@ -23,9 +28,32 @@ export function HeroStudio() {
 		return () => clearInterval(timer);
 	}, []);
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
-		navigate('/signin', { state: { email: email.trim() } });
+		const trimmed = email.trim().toLowerCase();
+		if (!EMAIL_REGEX.test(trimmed)) {
+			setHeroError('Please enter a valid email address.');
+			return;
+		}
+		setHeroError('');
+		setIsSending(true);
+		try {
+			const data = await requestOtp(trimmed);
+			navigate('/signin', {
+				state: {
+					email: trimmed,
+					otpSent: true,
+					devOtp: data?.devOtp || '',
+				},
+			});
+		} catch (err) {
+			setHeroError(
+				err?.response?.data?.message ||
+					'Could not send login code. Please try again.',
+			);
+		} finally {
+			setIsSending(false);
+		}
 	};
 
 	return (
@@ -57,7 +85,7 @@ export function HeroStudio() {
 						<button
 							type='button'
 							className='sy-google-pill'
-							onClick={() => navigate('/login')}>
+							onClick={() => navigate('/signin')}>
 							<img src='images/google.png' alt='' width='18' height='18' />
 							<span>Continue with Google</span>
 						</button>
@@ -81,11 +109,23 @@ export function HeroStudio() {
 							enterKeyHint='go'
 							className='sy-hero-input'
 							value={email}
-							onChange={(e) => setEmail(e.target.value)}
+							onChange={(e) => {
+								setEmail(e.target.value);
+								if (heroError) setHeroError('');
+							}}
 						/>
 
-						<button type='submit' className='sy-hero-submit'>
-							Get started - it’s free!
+						{heroError && (
+							<p className='sy-hero-error' role='alert'>
+								{heroError}
+							</p>
+						)}
+
+						<button
+							type='submit'
+							className='sy-hero-submit'
+							disabled={isSending}>
+							{isSending ? 'Sending code...' : 'Get started - it’s free!'}
 						</button>
 
 						<div className='sy-consent-box'>

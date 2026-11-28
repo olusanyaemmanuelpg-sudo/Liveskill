@@ -1,0 +1,178 @@
+/** @format */
+
+.sy-email-card {
+	inline-size: 100%;
+	max-inline-size: 460px;
+	background: #ffffff;
+	border-radius: 10px;
+	box-shadow: 0 10px 32px rgba(28, 48, 108, 0.09);
+	border: 1px solid rgba(203, 213, 225, 0.65);
+	overflow: hidden;
+}
+
+.sy-email-card-body {
+	padding: 36px 36px 28px;
+}
+
+.sy-email-card-body h1 {
+	font-size: 24px;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+	color: #111827;
+	text-align: center;
+	margin-block-end: 8px;
+}
+
+.sy-email-sub {
+	font-size: 14.5px;
+	line-height: 1.5;
+	color: #4b5563;
+	text-align: center;
+	margin-block-end: 22px;
+}
+
+.sy-auth-google-btn {
+	inline-size: 100%;
+	block-size: 46px;
+	border-radius: 6px;
+	border: 1px solid #d1d5db;
+	background: #ffffff;
+	color: #111827;
+	font-family: inherit;
+	font-size: 14.5px;
+	font-weight: 600;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	cursor: pointer;
+	transition: background-color 0.16s ease;
+}
+
+.sy-auth-google-btn:hover {
+	background: #f9fafb;
+}
+
+.sy-auth-or {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-block: 18px;
+	font-size: 12.5px;
+	color: #6b7280;
+}
+
+.sy-auth-or::before,
+.sy-auth-or::after {
+	content: '';
+	flex: 1;
+	block-size: 1px;
+	background: #e5e7eb;
+}
+
+.sy-email-form {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.sy-field-group {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.sy-field-group label {
+	font-size: 13px;
+	font-weight: 600;
+	color: #374151;
+}
+
+.sy-field-group input {
+	inline-size: 100%;
+	block-size: 46px;
+	padding: 0 14px;
+	border-radius: 6px;
+	border: 1px solid #9ca3af;
+	background: #ffffff;
+	color: #111827;
+	font-family: inherit;
+	font-size: max(1rem, 1em);
+}
+
+.sy-field-group input:focus-visible {
+	border-color: #1565ea;
+	outline: 2px solid rgba(21, 101, 234, 0.25);
+	outline-offset: 0;
+}
+
+.sy-email-error {
+	font-size: 13px;
+	font-weight: 500;
+	color: #dc2626;
+}
+
+.sy-email-submit {
+	inline-size: 100%;
+	block-size: 46px;
+	border-radius: 6px;
+	border: none;
+	background: #1565ea;
+	color: #ffffff;
+	font-family: inherit;
+	font-size: 15px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background-color 0.16s ease;
+}
+
+.sy-email-submit:hover:not(:disabled) {
+	background: #0f56cf;
+}
+
+.sy-email-submit:disabled {
+	opacity: 0.7;
+	cursor: wait;
+}
+
+.sy-mode-toggle {
+	display: block;
+	margin: 16px auto 0;
+	background: transparent;
+	border: none;
+	color: #4b5563;
+	font-family: inherit;
+	font-size: 13px;
+	font-weight: 500;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.sy-mode-toggle:hover {
+	color: #1565ea;
+}
+
+.sy-email-card-footer {
+	background: #f6f8fc;
+	border-block-start: 1px solid #e5e7eb;
+	padding: 16px 28px;
+	text-align: center;
+	font-size: 13.5px;
+	color: #4b5563;
+}
+
+.sy-email-card-footer a {
+	color: #1565ea;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.sy-email-card-footer a:hover {
+	text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+	.sy-email-card-body {
+		padding: 28px 20px 24px;
+	}
+}

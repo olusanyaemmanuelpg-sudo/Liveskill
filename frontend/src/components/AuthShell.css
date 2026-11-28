@@ -1,0 +1,251 @@
+/** @format */
+
+.sy-auth-shell {
+	position: relative;
+	min-block-size: 100dvh;
+	background-color: #dde5ff;
+	color: #111827;
+	font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.sy-auth-shell :where(a, button, input):focus-visible {
+	outline: 2px solid #1565ea;
+	outline-offset: 2px;
+}
+
+.sy-auth-topbar {
+	position: relative;
+	z-index: 2;
+	padding: 20px 28px;
+}
+
+.sy-auth-logo {
+	display: inline-flex;
+	align-items: center;
+	gap: 9px;
+	text-decoration: none;
+	color: #1565ea;
+}
+
+.sy-auth-logo-mark {
+	inline-size: 30px;
+	block-size: 30px;
+	border-radius: 9px;
+	background: #1565ea;
+	color: #ffffff;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 14px;
+}
+
+.sy-auth-logo-text {
+	font-size: 22px;
+	font-weight: 700;
+	letter-spacing: -0.03em;
+	color: #1565ea;
+}
+
+.sy-auth-stage {
+	position: relative;
+	z-index: 2;
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 16px 20px 48px;
+}
+
+/* Floating StreamYard-style pastel vector doodles */
+.sy-auth-bg-art {
+	position: fixed;
+	inset: 0;
+	z-index: 1;
+	pointer-events: none;
+}
+
+.art-float {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: rgba(255, 255, 255, 0.92);
+}
+
+.art-tl-window {
+	inset-block-end: 175px;
+	inset-inline-start: 145px;
+	inline-size: 86px;
+	block-size: 62px;
+	background: rgba(255, 255, 255, 0.55);
+	border: 2px solid #ffffff;
+	border-radius: 6px;
+	flex-direction: column;
+	justify-content: flex-start;
+	padding: 5px;
+	transform: rotate(-6deg);
+}
+
+.art-win-dots {
+	display: flex;
+	gap: 3px;
+	align-self: flex-start;
+	margin-block-end: 4px;
+}
+
+.art-win-dots span {
+	inline-size: 4px;
+	block-size: 4px;
+	border-radius: 50%;
+	background: #9bb8ff;
+}
+
+.art-win-avatar {
+	flex: 1;
+	inline-size: 100%;
+	background: #bfd0ff;
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #ffffff;
+	font-size: 20px;
+}
+
+.art-tl-chats {
+	inset-block-end: 195px;
+	inset-inline-start: 270px;
+	font-size: 40px;
+	color: rgba(160, 184, 255, 0.65);
+}
+
+.art-bl-play {
+	inset-block-end: 26px;
+	inset-inline-start: 85px;
+	inline-size: 48px;
+	block-size: 48px;
+	border-radius: 50%;
+	background: #b8cbff;
+	font-size: 16px;
+}
+
+.art-bl-monitor {
+	inset-block-end: 95px;
+	inset-inline-start: 175px;
+	inline-size: 64px;
+	block-size: 64px;
+	border-radius: 50%;
+	background: #b8cbff;
+	font-size: 24px;
+}
+
+.art-bl-cam {
+	inset-block-end: 28px;
+	inset-inline-start: 312px;
+	inline-size: 44px;
+	block-size: 44px;
+	border-radius: 50%;
+	background: #b8cbff;
+	font-size: 16px;
+}
+
+.art-bl-star {
+	inset-block-end: 12px;
+	inset-inline-start: 418px;
+	inline-size: 56px;
+	block-size: 70px;
+	border-radius: 6px;
+	background: #b8cbff;
+	font-size: 20px;
+	transform: rotate(-10deg);
+}
+
+.art-bm-portrait {
+	inset-block-end: 18px;
+	inset-inline-start: 515px;
+	inline-size: 86px;
+	block-size: 64px;
+	border-radius: 6px;
+	border: 2px solid #ffffff;
+	background: #c7d6ff;
+	font-size: 24px;
+	transform: rotate(-6deg);
+}
+
+.art-br-chart {
+	inset-block-end: 0;
+	inset-inline-end: 300px;
+	inline-size: 76px;
+	block-size: 52px;
+	border-radius: 6px 6px 0 0;
+	background: #c7d6ff;
+	border: 2px solid #ffffff;
+	font-size: 20px;
+	transform: rotate(10deg);
+}
+
+.art-tr-heart {
+	inset-block-end: 192px;
+	inset-inline-end: 245px;
+	font-size: 46px;
+	color: #b8cbff;
+	transform: rotate(-10deg);
+}
+
+.art-mr-card {
+	inset-block-end: 140px;
+	inset-inline-end: 120px;
+	inline-size: 86px;
+	block-size: 62px;
+	border-radius: 6px;
+	background: #c7d6ff;
+	border: 2px solid #ffffff;
+	transform: rotate(12deg);
+	flex-direction: column;
+	font-size: 22px;
+}
+
+.art-card-person {
+	display: none;
+}
+
+.art-mr-msg {
+	inset-block-end: 65px;
+	inset-inline-end: 235px;
+	inline-size: 64px;
+	block-size: 64px;
+	border-radius: 50%;
+	background: #b8cbff;
+	font-size: 22px;
+}
+
+.art-br-cam {
+	inset-block-end: 42px;
+	inset-inline-end: 148px;
+	inline-size: 40px;
+	block-size: 40px;
+	border-radius: 50%;
+	background: #b8cbff;
+	font-size: 15px;
+}
+
+.art-br-bubbles {
+	inset-block-end: 10px;
+	inset-inline-end: 62px;
+	font-size: 40px;
+	color: #b8cbff;
+	transform: rotate(-8deg);
+}
+
+@media (max-width: 768px) {
+	.sy-auth-bg-art {
+		opacity: 0.45;
+	}
+
+	.sy-auth-topbar {
+		padding: 16px;
+	}
+}

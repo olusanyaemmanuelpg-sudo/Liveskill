@@ -1,0 +1,262 @@
+/** @format */
+
+.sy-otp-card {
+	inline-size: 100%;
+	max-inline-size: 460px;
+	background: #ffffff;
+	border-radius: 10px;
+	box-shadow: 0 10px 32px rgba(28, 48, 108, 0.09);
+	border: 1px solid rgba(203, 213, 225, 0.65);
+	overflow: hidden;
+}
+
+.sy-otp-body {
+	padding: 36px 36px 28px;
+	text-align: center;
+}
+
+.sy-otp-body h1 {
+	font-size: 25px;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+	color: #111827;
+	margin-block-end: 12px;
+}
+
+.sy-otp-subtitle {
+	font-size: 15px;
+	line-height: 1.5;
+	color: #374151;
+	margin-block-end: 24px;
+}
+
+.sy-otp-subtitle strong {
+	display: block;
+	font-weight: 600;
+	color: #111827;
+	word-break: break-word;
+}
+
+.sy-dev-otp-banner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+	padding: 8px 12px;
+	margin-block-end: 18px;
+	border-radius: 8px;
+	background: #eff6ff;
+	border: 1px solid #bfdbfe;
+	font-size: 12.5px;
+	color: #1e40af;
+}
+
+.sy-dev-otp-banner button {
+	padding: 4px 10px;
+	border-radius: 6px;
+	border: none;
+	background: #1565ea;
+	color: #ffffff;
+	font-family: inherit;
+	font-size: 12px;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.sy-otp-form {
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+}
+
+.sy-otp-boxes-wrap {
+	position: relative;
+	inline-size: 100%;
+	cursor: text;
+}
+
+.sy-otp-real-input {
+	position: absolute;
+	inset: 0;
+	inline-size: 100%;
+	block-size: 100%;
+	opacity: 0;
+	font-size: max(1rem, 1em);
+	z-index: 2;
+	cursor: text;
+}
+
+.sy-otp-boxes {
+	display: grid;
+	grid-template-columns: repeat(6, minmax(0, 1fr));
+	gap: 12px;
+}
+
+.sy-otp-box {
+	block-size: 52px;
+	border-radius: 7px;
+	border: 1px solid #9ca3af;
+	background: #ffffff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+	font-size: 20px;
+	font-weight: 600;
+	color: #111827;
+	transition:
+		border-color 0.15s ease,
+		box-shadow 0.15s ease;
+}
+
+.sy-otp-box.is-focused {
+	border: 1.5px solid #1565ea;
+	box-shadow: 0 0 0 3px rgba(21, 101, 234, 0.18);
+}
+
+.sy-otp-caret {
+	inline-size: 1.5px;
+	block-size: 22px;
+	background: #111827;
+	animation: sy-blink 1s step-end infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.sy-otp-caret {
+		animation: none;
+	}
+}
+
+.sy-otp-error {
+	font-size: 13px;
+	font-weight: 500;
+	color: #dc2626;
+	margin-block-start: -4px;
+}
+
+.sy-otp-submit {
+	inline-size: 100%;
+	block-size: 46px;
+	border-radius: 6px;
+	border: none;
+	background: #a5c3fa;
+	color: #ffffff;
+	font-family: inherit;
+	font-size: 15px;
+	font-weight: 600;
+	cursor: not-allowed;
+	transition: background-color 0.18s ease;
+}
+
+.sy-otp-submit.is-ready {
+	background: #1565ea;
+	cursor: pointer;
+}
+
+.sy-otp-submit.is-ready:hover:not(:disabled) {
+	background: #0f56cf;
+}
+
+.sy-otp-footer {
+	background: #f6f8fc;
+	border-block-start: 1px solid #e5e7eb;
+	padding: 16px 28px;
+}
+
+.sy-otp-help-trigger {
+	inline-size: 100%;
+	background: transparent;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	text-align: left;
+	font-family: inherit;
+	font-size: 13.5px;
+	line-height: 1.45;
+	color: #4b5563;
+	cursor: pointer;
+}
+
+.sy-help-link-inline {
+	color: #1565ea;
+	text-decoration: underline;
+	font-weight: 500;
+}
+
+.sy-otp-help-trigger i {
+	font-size: 12px;
+	color: #1565ea;
+	transition: transform 0.18s ease;
+}
+
+.sy-otp-help-trigger i.is-open {
+	transform: rotate(180deg);
+}
+
+.sy-otp-help-panel {
+	margin-block-start: 12px;
+	padding-block-start: 12px;
+	border-block-start: 1px solid #e5e7eb;
+	font-size: 12.5px;
+	color: #4b5563;
+}
+
+.sy-otp-help-panel ul {
+	padding-inline-start: 18px;
+	margin-block-end: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.sy-otp-help-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.sy-otp-help-actions button {
+	padding: 5px 10px;
+	border-radius: 6px;
+	border: 1px solid #d1d5db;
+	background: #ffffff;
+	color: #111827;
+	font-family: inherit;
+	font-size: 12px;
+	font-weight: 500;
+	cursor: pointer;
+}
+
+.sy-otp-help-actions button:hover:not(:disabled) {
+	border-color: #1565ea;
+	color: #1565ea;
+}
+
+.sy-resend-ok {
+	margin-block-start: 8px;
+	font-size: 12px;
+	font-weight: 500;
+	color: #16a34a;
+}
+
+@keyframes sy-blink {
+	50% {
+		opacity: 0;
+	}
+}
+
+@media (max-width: 480px) {
+	.sy-otp-body {
+		padding: 28px 20px 24px;
+	}
+
+	.sy-otp-boxes {
+		gap: 8px;
+	}
+
+	.sy-otp-box {
+		block-size: 46px;
+	}
+}

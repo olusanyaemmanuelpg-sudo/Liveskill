@@ -12,7 +12,7 @@ const handleLogin = async (req, res) => {
 			.status(400)
 			.json({ message: 'Email and password are required.' });
 	const foundUser = await User.findOne({ email: email }).exec();
-	if (!foundUser) return res.sendStatus(401);
+	if (!foundUser || !foundUser.password) return res.sendStatus(401);
 
 	const match = await bcrypt.compare(pwd, foundUser.password);
 	if (match) {
@@ -45,7 +45,14 @@ const handleLogin = async (req, res) => {
 			sameSite: 'None', // or 'Strict'/'Lax' depending on your setup */
 			maxAge: 24 * 60 * 60 * 1000,
 		});
-		res.json({ accessToken });
+		res.json({
+			accessToken,
+			user: {
+				username: foundUser.username,
+				email: foundUser.email,
+				hasCompletedOnboarding: Boolean(foundUser.hasCompletedOnboarding),
+			},
+		});
 	} else {
 		res.sendStatus(401);
 	}
