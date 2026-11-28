@@ -1,0 +1,306 @@
+/** @format */
+
+.sy-hero {
+	position: relative;
+	min-block-size: 813px;
+	padding: 136px 40px 40px;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	background: #0d0e12;
+}
+
+.sy-hero-media {
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+}
+
+.sy-hero-scene {
+	position: absolute;
+	inset: 0;
+	inline-size: 100%;
+	block-size: 100%;
+	object-fit: cover;
+	object-position: center 22%;
+	opacity: 0;
+	filter: brightness(0.46) contrast(1.06) saturate(0.86);
+	transition: opacity 1.4s ease;
+}
+
+.sy-hero-scene.is-active {
+	opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.sy-hero-scene.is-active {
+		animation: sy-kenburns 12s ease-out forwards;
+	}
+}
+
+.sy-hero-scrim {
+	position: absolute;
+	inset: 0;
+	background:
+		linear-gradient(
+			90deg,
+			rgba(10, 12, 16, 0.78) 0%,
+			rgba(10, 12, 16, 0.42) 55%,
+			rgba(10, 12, 16, 0.62) 100%
+		),
+		linear-gradient(
+			180deg,
+			rgba(13, 14, 18, 0.55) 0%,
+			rgba(13, 14, 18, 0.15) 45%,
+			#0d0e12 100%
+		);
+}
+
+.sy-hero-container {
+	position: relative;
+	z-index: 1;
+	max-inline-size: 1370px;
+	inline-size: 100%;
+	margin-inline: auto;
+	display: grid;
+	grid-template-columns: minmax(0, 802px) 420px;
+	justify-content: space-between;
+	align-items: center;
+	gap: 48px;
+}
+
+.sy-hero-copy {
+	padding-block-start: 40px;
+}
+
+.sy-hero-copy h1 {
+	font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+	font-size: clamp(2.5rem, 1.8rem + 2.3vw, 3.9rem);
+	font-weight: 500;
+	line-height: 1.14;
+	letter-spacing: -0.025em;
+	color: #ffffff;
+	max-inline-size: 760px;
+}
+
+.sy-hero-subtitle {
+	margin-block-start: 40px;
+	font-size: 16px;
+	line-height: 1.6;
+	color: rgba(255, 255, 255, 0.78);
+	max-inline-size: 620px;
+}
+
+/* Right Signup Card (420px wide, matches StreamYard) */
+.sy-hero-card {
+	inline-size: 420px;
+	max-inline-size: 100%;
+	padding: 30px 32px;
+	border-radius: 18px;
+	background: linear-gradient(
+		180deg,
+		rgba(15, 17, 23, 0.78) 0%,
+		rgba(13, 14, 18, 0.92) 100%
+	);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	backdrop-filter: blur(18px);
+	-webkit-backdrop-filter: blur(18px);
+}
+
+.sy-hero-card form {
+	display: flex;
+	flex-direction: column;
+}
+
+.sy-google-pill {
+	inline-size: 100%;
+	block-size: 44px;
+	border-radius: 9999px;
+	border: none;
+	background: #ffffff;
+	color: #111319;
+	font-family: inherit;
+	font-size: 14px;
+	font-weight: 600;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	cursor: pointer;
+	transition: background-color 0.16s ease;
+}
+
+.sy-google-pill:hover {
+	background: #f1f5f9;
+}
+
+.sy-email-divider {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-block: 16px;
+	font-size: 13px;
+	color: rgba(255, 255, 255, 0.72);
+}
+
+.sy-hero-input {
+	inline-size: 100%;
+	block-size: 52px;
+	padding: 0 22px;
+	border-radius: 9999px;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(5px);
+	color: #ffffff;
+	font-family: inherit;
+	font-size: max(1rem, 1em);
+}
+
+.sy-hero-input::placeholder {
+	color: rgba(255, 255, 255, 0.62);
+}
+
+.sy-hero-submit {
+	inline-size: 100%;
+	block-size: 48px;
+	margin-block-start: 16px;
+	border-radius: 9999px;
+	border: none;
+	background: #0066ff;
+	color: #ffffff;
+	font-family: inherit;
+	font-size: 15px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background-color 0.16s ease;
+}
+
+.sy-hero-submit:hover {
+	background: #1472ff;
+}
+
+.sy-consent-box {
+	margin-block-start: 18px;
+	padding: 12px 14px;
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	background: rgba(255, 255, 255, 0.02);
+}
+
+.sy-consent-label {
+	display: flex;
+	align-items: flex-start;
+	gap: 12px;
+	cursor: pointer;
+}
+
+.sy-check-wrap {
+	position: relative;
+	inline-size: 20px;
+	block-size: 20px;
+	margin-block-start: 2px;
+	flex-shrink: 0;
+}
+
+.sy-check-wrap input {
+	position: absolute;
+	inset: 0;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.sy-check-visual {
+	inline-size: 20px;
+	block-size: 20px;
+	border-radius: 5px;
+	border: 1.5px solid rgba(255, 255, 255, 0.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 11px;
+	color: #ffffff;
+	transition:
+		background-color 0.16s ease,
+		border-color 0.16s ease;
+}
+
+.sy-check-wrap input:checked + .sy-check-visual {
+	background: #0066ff;
+	border-color: #0066ff;
+}
+
+.sy-check-wrap input:focus-visible + .sy-check-visual {
+	outline: 2px solid #4d94ff;
+	outline-offset: 2px;
+}
+
+.sy-consent-text {
+	font-size: 12px;
+	line-height: 1.5;
+	color: rgba(255, 255, 255, 0.72);
+}
+
+.sy-consent-text a,
+.sy-hero-legal a,
+.sy-hero-login-note a {
+	color: #4d94ff;
+	text-decoration: underline;
+}
+
+.sy-hero-trusted {
+	margin-block-start: 18px;
+	text-align: center;
+	font-size: 15px;
+	font-weight: 500;
+	color: #6cc04a;
+}
+
+.sy-hero-legal {
+	margin-block-start: 14px;
+	text-align: center;
+	font-size: 11.5px;
+	line-height: 1.5;
+	color: rgba(255, 255, 255, 0.65);
+}
+
+.sy-card-rule {
+	margin-block: 16px;
+	block-size: 1px;
+	background: rgba(255, 255, 255, 0.1);
+}
+
+.sy-hero-login-note {
+	text-align: center;
+	font-size: 13px;
+	color: rgba(255, 255, 255, 0.85);
+}
+
+@keyframes sy-kenburns {
+	from {
+		transform: scale(1);
+	}
+	to {
+		transform: scale(1.06);
+	}
+}
+
+@media (max-width: 1080px) {
+	.sy-hero {
+		min-block-size: auto;
+		padding: 120px 24px 64px;
+	}
+
+	.sy-hero-container {
+		grid-template-columns: 1fr;
+		gap: 36px;
+	}
+
+	.sy-hero-copy {
+		padding-block-start: 0;
+	}
+
+	.sy-hero-card {
+		inline-size: 100%;
+		max-inline-size: 460px;
+	}
+}
