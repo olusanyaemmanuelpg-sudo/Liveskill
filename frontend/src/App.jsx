@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router';
 import { HomePage } from './pages/Home';
 import { Login } from './pages/Login';
 import { Signin } from './pages/Signin';
+import { VerifyOtp } from './pages/VerifyOtp';
 import { Welcome } from './pages/Welcome';
 import { MainPage } from './pages/MainPage';
 import { StreamInfo } from './pages/StreamInfo';
@@ -17,6 +18,7 @@ function App() {
 			<Route path='/' element={<HomePage />} />
 			<Route path='login' element={<Login />} />
 			<Route path='signin' element={<Signin />} />
+			<Route path='verify-otp' element={<VerifyOtp />} />
 			<Route path='welcome' element={<Welcome />} />
 			<Route path='liveskill' element={<MainPage />} />
 			<Route path='liveskill-streaminfo' element={<StreamInfo />} />

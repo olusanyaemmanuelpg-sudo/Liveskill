@@ -106,6 +106,50 @@
 	outline-offset: 0;
 }
 
+.sy-pwd-wrap {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.sy-pwd-wrap input {
+	padding-inline-end: 46px;
+}
+
+.sy-pwd-toggle {
+	position: absolute;
+	inset-inline-end: 6px;
+	inline-size: 36px;
+	block-size: 36px;
+	border: none;
+	border-radius: 6px;
+	background: transparent;
+	color: #6b7280;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.sy-pwd-toggle:hover {
+	color: #111827;
+	background: #f3f4f6;
+}
+
+.sy-otp-alt-link {
+	display: block;
+	margin-block-start: 16px;
+	text-align: center;
+	font-size: 13px;
+	font-weight: 500;
+	color: #1565ea;
+	text-decoration: none;
+}
+
+.sy-otp-alt-link:hover {
+	text-decoration: underline;
+}
+
 .sy-email-error {
 	font-size: 13px;
 	font-weight: 500;
