@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router';
 import { HomePage } from './pages/Home';
 import { Login } from './pages/Login';
 import { Signin } from './pages/Signin';
+import { Welcome } from './pages/Welcome';
 import { MainPage } from './pages/MainPage';
 import { StreamInfo } from './pages/StreamInfo';
 import { StreamRoom } from './pages/StreamRoom';
@@ -16,6 +17,7 @@ function App() {
 			<Route path='/' element={<HomePage />} />
 			<Route path='login' element={<Login />} />
 			<Route path='signin' element={<Signin />} />
+			<Route path='welcome' element={<Welcome />} />
 			<Route path='liveskill' element={<MainPage />} />
 			<Route path='liveskill-streaminfo' element={<StreamInfo />} />
 			<Route path='liveskill-streamroom' element={<StreamRoom />} />
