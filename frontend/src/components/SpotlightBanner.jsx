@@ -6,13 +6,11 @@ import './SpotlightBanner.css';
 export function SpotlightBanner() {
 	return (
 		<section className='sy-spotlight-wrap' id='creators-spotlight'>
-			<div className='sy-spotlight-banner'>
-				<div className='sy-spotlight-media'>
-					<img
-						src='https://res.cloudinary.com/dovuy2zci/image/upload/v1774647316/smiling-ceo-his-office_23-2147626275_iwtgns.jpg'
-						alt='@CodeMentor teaching a live workshop'
-					/>
-				</div>
+			<article className='sy-spotlight-banner'>
+				<img
+					src='https://res.cloudinary.com/dovuy2zci/image/upload/v1774647316/smiling-ceo-his-office_23-2147626275_iwtgns.jpg'
+					alt='@CodeMentor teaching a live workshop'
+				/>
 
 				<div className='sy-spotlight-body'>
 					<blockquote>
@@ -31,7 +29,7 @@ export function SpotlightBanner() {
 						<span>Watch example</span>
 					</Link>
 				</div>
-			</div>
+			</article>
 		</section>
 	);
 }
