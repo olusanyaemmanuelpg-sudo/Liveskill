@@ -2,5 +2,20 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
- /* font-family: "Noto Sans", sans-serif; */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.visually-hidden:where(:not(:focus-within, :active)) {
+  position: absolute !important;
+  clip-path: inset(50%) !important;
+  overflow: hidden !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  white-space: nowrap !important;
 }
