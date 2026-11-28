@@ -324,16 +324,16 @@ Authorization: Bearer <access_token>
 
 ## Technologies Used
 
-| Technology | Description |
-|------------|-------------|
-| [Node.js](https://nodejs.org/) | JavaScript runtime for the server |
-| [Express](https://expressjs.com/) | Web framework for routing and middleware |
-| [MongoDB](https://www.mongodb.com/) | NoSQL database for user and email data |
-| [Mongoose](https://mongoosejs.com/) | Object modeling for MongoDB |
-| [LiveKit](https://livekit.io/) | Real-time video and audio streaming infrastructure |
-| [Socket.io](https://socket.io/) | Real-time bidirectional communication |
-| [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken) | JWT generation and verification |
-| [bcrypt](https://github.com/kelektiv/node.bcrypt.js) | Password hashing |
+| Technology                                                 | Description                                        |
+| ---------------------------------------------------------- | -------------------------------------------------- |
+| [Node.js](https://nodejs.org/)                             | JavaScript runtime for the server                  |
+| [Express](https://expressjs.com/)                          | Web framework for routing and middleware           |
+| [MongoDB](https://www.mongodb.com/)                        | NoSQL database for user and email data             |
+| [Mongoose](https://mongoosejs.com/)                        | Object modeling for MongoDB                        |
+| [LiveKit](https://livekit.io/)                             | Real-time video and audio streaming infrastructure |
+| [Socket.io](https://socket.io/)                            | Real-time bidirectional communication              |
+| [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken) | JWT generation and verification                    |
+| [bcrypt](https://github.com/kelektiv/node.bcrypt.js)       | Password hashing                                   |
 
 ## Contributing
 
