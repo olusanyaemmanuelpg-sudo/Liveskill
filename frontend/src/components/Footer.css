@@ -1,63 +1,183 @@
 /** @format */
 
-footer {
-	background-color: #f8f9fa;
-	padding-bottom: 50px;
-	padding: 20px;
-}
-footer h2 {
-	font-family: 'Inter', sans-serif;
-	font-weight: 600;
-	font-size: 24px;
-	color: #333;
-}
-.footer-con {
-	display: flex;
-	justify-content: space-between;
-}
-.footer-left {
-	display: flex;
-	align-items: flex-end;
-	gap: 30px;
-}
-.footer-left p {
-	color: #333;
-	font-family: 'Poppins', sans-serif;
-	font-weight: 500;
-}
-.footer-right h3 {
-	color: #333;
-	font-family: 'Poppins', sans-serif;
-	margin-bottom: 10px;
-}
-.footer-right-div {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-.footer-right-div input {
-	padding: 9px 20px;
-	color: #333;
-	border: 1px solid #333;
-	border-radius: 10px;
-	font-family: 'Poppins', sans-serif;
-}
-.footer-right-div button {
-	padding: 9px 13px;
-	background-color: #111;
-	font-size: 15px;
-	color: white;
-	border-radius: 10px;
-	border: none;
-	font-family: 'Poppins', sans-serif;
-}
-.footer-right-div button:hover {
-	background-color: #333;
+.sy-footer {
+	background: #0d0e12;
+	color: #ffffff;
+	padding: 80px 24px 48px;
 }
 
-.notification {
-	margin-top: 10px;
+.sy-footer-container {
+	max-inline-size: 1312px;
+	margin-inline: auto;
+}
+
+.sy-footer-brand-row {
+	margin-block-end: 48px;
+}
+
+.sy-footer-brand-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	text-decoration: none;
+	color: #ffffff;
+	margin-block-end: 10px;
+}
+
+.sy-footer-tagline {
 	font-size: 14px;
+	color: #8d93a5;
+}
+
+.sy-footer-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1.5fr;
+	gap: 40px;
+	padding-block-end: 56px;
+	border-block-end: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sy-footer-col h4 {
+	font-size: 15px;
+	font-weight: 600;
+	color: #ffffff;
+	margin-block-end: 18px;
+}
+
+.sy-footer-col ul {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 13px;
+}
+
+.sy-footer-col ul a {
+	color: #9ca3af;
+	text-decoration: none;
+	font-size: 14px;
+	transition: color 0.16s ease;
+}
+
+.sy-footer-col ul a:hover {
+	color: #ffffff;
+}
+
+.sy-footer-subcopy {
+	font-size: 13.5px;
+	line-height: 1.55;
+	color: #9ca3af;
+	margin-block-end: 14px;
+}
+
+.sy-footer-form {
+	display: flex;
+	gap: 8px;
+}
+
+.sy-footer-form input {
+	flex: 1 1 auto;
+	min-inline-size: 0;
+	block-size: 44px;
+	padding: 0 18px;
+	border-radius: 9999px;
+	border: 1px solid rgba(255, 255, 255, 0.22);
+	background: #181a22;
+	color: #ffffff;
+	font-family: inherit;
+	font-size: max(1rem, 1em);
+}
+
+.sy-footer-form input::placeholder {
+	color: #8d93a5;
+}
+
+.sy-footer-form button {
+	block-size: 44px;
+	padding: 0 20px;
+	border-radius: 9999px;
+	border: none;
+	background: #0066ff;
+	color: #ffffff;
+	font-family: inherit;
+	font-size: 14px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background-color 0.16s ease;
+}
+
+.sy-footer-form button:hover {
+	background: #1472ff;
+}
+
+.sy-footer-notice {
+	margin-block-start: 10px;
+	font-size: 13px;
 	font-weight: 500;
-	font-family: 'Poppins', sans-serif;
+}
+
+.sy-footer-socials {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	margin-block-start: 20px;
+}
+
+.sy-footer-socials a {
+	color: #9ca3af;
+	font-size: 18px;
+	transition: color 0.16s ease;
+}
+
+.sy-footer-socials a:hover {
+	color: #ffffff;
+}
+
+.sy-footer-utility {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	padding-block: 28px 18px;
+}
+
+.sy-footer-legal-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 22px;
+}
+
+.sy-footer-legal-links a {
+	font-size: 13px;
+	color: #8d93a5;
+	text-decoration: none;
+}
+
+.sy-footer-legal-links a:hover {
+	color: #ffffff;
+}
+
+.sy-footer-lang {
+	font-size: 13px;
+	color: #ffffff;
+	padding: 6px 14px;
+	border-radius: 9999px;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sy-footer-copyright {
+	font-size: 12.5px;
+	color: #6b7280;
+}
+
+@media (max-width: 960px) {
+	.sy-footer-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 560px) {
+	.sy-footer-grid {
+		grid-template-columns: 1fr;
+	}
 }

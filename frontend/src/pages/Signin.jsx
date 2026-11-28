@@ -1,8 +1,7 @@
 /** @format */
 
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router';
-import { useNavigate } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import handleRegister from '../../authentication/handleRegister';
 import './Signin.css';
 
@@ -60,8 +59,9 @@ function AuthCarousel() {
 }
 
 export function Signin() {
+	const location = useLocation();
 	const [name, setName] = useState('');
-	const [email, setEmail] = useState('');
+	const [email, setEmail] = useState(location.state?.email || '');
 	const [pwd, setPwd] = useState('');
 	const [confirmPassword, setConfirmPassword] = useState('');
 	const [emailTouched, setEmailTouched] = useState(false);
