@@ -21,13 +21,26 @@ const userSchema = new Schema({
 	},
 	password: {
 		type: String,
-		required: true,
+		required: false,
 	},
 	profilePicture: {
 		type: String,
 		default:
 			'https://res.cloudinary.com/dovuy2zci/image/upload/q_auto/f_auto/v1775173420/default-avatar-profile-flat-icon-social-media-user-vector-portrait-unknown-human-image-default-avatar-profile-flat-icon-184330869_ceoomy.jpg',
 	},
+	otpCodeHash: String,
+	otpExpiresAt: Date,
+	isVerified: {
+		type: Boolean,
+		default: false,
+	},
+	hasCompletedOnboarding: {
+		type: Boolean,
+		default: false,
+	},
+	discoverySource: String,
+	discoveryDetail: String,
+	onboardingGoal: String,
 	refreshToken: String,
 });
 
